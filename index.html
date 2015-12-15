@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+  <script type="text/javascript">
+    var deviceID    = "YOUR DEVICE ID";
+    var accessToken = "YOUR PARTICLE ACCESS TOKEN";
+    var setFunc = "rgbColor";
+    function setValue(obj) {
+			var hexcolor = document.getElementById('colorid').value;
+			var colors = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexcolor);
+			var s = "" + parseInt( colors[1], 16) + "," + parseInt(colors[2], 16) + "," + parseInt(colors[3], 16)
+      sparkSetPos(s);
+    }
+    function sparkSendValue(newValue) {
+			var requestURL = "https://api.spark.io/v1/devices/" +deviceID + "/" + setFunc + "/";
+      $.post( requestURL, { params: newValue, access_token: accessToken });
+    }
+	</script>
+	<input type='color' name='color' id="colorid" onchange="setValue(this)">
+</body>
+</html>
