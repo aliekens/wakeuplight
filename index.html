@@ -12,9 +12,9 @@
 			var hexcolor = document.getElementById('colorid').value;
 			var colors = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexcolor);
 			var s = "" + parseInt( colors[1], 16) + "," + parseInt(colors[2], 16) + "," + parseInt(colors[3], 16)
-      sparkSetPos(s);
+      sparkSetValue(s);
     }
-    function sparkSendValue(newValue) {
+    function sparkSetValue(newValue) {
 			var requestURL = "https://api.spark.io/v1/devices/" +deviceID + "/" + setFunc + "/";
       $.post( requestURL, { params: newValue, access_token: accessToken });
     }
