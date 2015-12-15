@@ -8,6 +8,8 @@ Here's a few things that may help you build a wake-up light with a Particle.io P
 
 For my wake-up light, I have connected 21 WS2811 LEDs to pin D6 of a Particle Photon. The Particle and power leads of the LED string feed off a 5V power adapter. 
 
+I usually power my LED creations with WS2811 LED "strings" (instead of strips). These are water proof (not really needed in the bedroom) and can be seperated by about 7cm, which is good to hang 21 LEDs over the width of our bed. I have used some mighty duct tape magic to hang the contraption from my bed frame.
+
 ## Software
 
 ### Particle.io code
@@ -15,7 +17,7 @@ For my wake-up light, I have connected 21 WS2811 LEDs to pin D6 of a Particle Ph
 The code that runs on the Particle is in `wakeuplight.ino`. It has two example functions:
 
 * Start a 30 minute light sequence, simulating dawn and sunrise, with function `wakeup`
-* Set the LEDs to a specified color, with function `rgbColor` which accepts values of the format `123,45,56` denoting R, G, B bytes.
+* Set the LEDs to a specified color, with function `rgbColor` which accepts values of the format `123,123,123` denoting R, G, B bytes.
 
 ### An example cronjob
 
