@@ -19,6 +19,8 @@ The code that runs on the Particle is in `wakeuplight.ino`. It has two example f
 * Start a 30 minute light sequence, simulating dawn and sunrise, with function `wakeup`
 * Set the LEDs to a specified color, with function `rgbColor` which accepts values of the format `123,123,123` denoting R, G, B bytes.
 
+If you want to run this from the Particle Build IDE, copy this code into a new project and add the "NEOPIXEL" library.
+
 ### An example cronjob
 
 You can start the wake-up light from a cronjob, e.g., at 7 each morning
